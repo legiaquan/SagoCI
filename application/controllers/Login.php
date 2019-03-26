@@ -1,4 +1,5 @@
 <?php
+ob_start();
 	class Login extends CI_Controller
 	{
 		function __construct()
