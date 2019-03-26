@@ -69,6 +69,7 @@
                         </div>                        
                     </div>
                 </form>
+                <!--dangky
                  <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="module/signup.php">
                     <div class="col-sm-5">
                         <a align="center" style="font-size: 25px">Đăng ký</a>
@@ -108,7 +109,7 @@
                         </div>   
                     </div>
                 </form> 
-
+                -->
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#contact-page-->
