@@ -8,7 +8,17 @@
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> VND</a></li>
+						<?php if(isset($_SESSION['userdangnhap']))
+						{
+							?>
+							<li><a href="#"><i class="fa fa-user-o"></i>Chào <?php echo $_SESSION['userdangnhap']['hoten'];?></a></li>
+							<li><a href="<?php echo base_url('login/user_logout');?>"><i></i>logout</a></li>
+							<?php
+						}
+						else{
+						?>
 						<li><a href="<?php echo base_url('login');?>"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
+							<?php }?>
 					</ul>
 				</div>
 			</div>
