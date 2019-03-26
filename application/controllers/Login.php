@@ -8,6 +8,9 @@
         }
 		function index()
 		{
+			//kiem tra user da dang nhap chua. True->tra ve trang chu
+			if(isset($_SESSION['userdangnhap']))
+				redirect(base_url());
 			$this->load->view('site/home/v_login');
 		}
 		function check_login()
@@ -22,8 +25,29 @@
 			//echo 'tai khoan la: '.$id_user.'pass là: '.$pass;
 			$user =$this->m_user_table->login($id_user,$pass);
 			//var_dump($user);
-
-			$this->load->view('site/home/v_login');
+			if($user!=null){
+			$_SESSION['userdangnhap'] = $user[0];
+			redirect(base_url());
+			}
+			else
+			{
+				echo '<script>alert("Sai mật khẩu hoặc tài khoản không tồn ại!");window.history.go(-1);</script>';
+			}
+			//var_dump($_SESSION['userdangnhap']);
+			//dua ve trang chu
+			//redirect(base_url());
+			
+		}
+		function user_logout()
+		{
+			//hủy session user
+			unset($_SESSION['userdangnhap']);
+			//dua ve trang chu
+			redirect(base_url());
+		}
+		function signup()
+		{
+			//insert
 		}
 	}
 ?>
