@@ -16,6 +16,13 @@
 			}
 			return false;
 		}
+		public function signin($user_name,$password,$hoten,$diachi,$email,$sdt)
+		{
+			$hieuluc=date('Y-m-d');
+			$dangky = array('id_user' => $user_name,'pass'=> $password ,'hoten'=>$hoten, 'diachi'=>$diachi,'email'=>$email,'sdt'=>$sdt,'hieuluc'=>$hieuluc);
+			//cau lenh truy van sql tuong duong insert into tbthanhvien(id_user,pass,hoten, diachi,email,sdt,hieuluc) values( '$user_name','$password' ,'$hoten', '$diachi','$email','$sdt','$hieuluc')
+			$this->db->insert('tbthanhvien',$dangky);
+		}
 		
 		
 	}

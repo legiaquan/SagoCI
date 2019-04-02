@@ -52,6 +52,7 @@
 					<!-- STORE -->
 					<div id="store" class="col-md-9">
 						<!-- store top filter -->
+						
 						<div class="store-filter clearfix">
 							<div class="store-sort">
 								<label>
@@ -72,14 +73,18 @@
 						<!-- store products -->
 						<div class="row">
 							<?php
-											foreach ($ds as  $value) {
+							//in số sản phẩm tìm kiếm được
+							$i=0;
+
+							foreach ($ds as  $value) {
 												# code...
+								$i++;
 										?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt="">
+										<a href="<?php echo base_url('store/chi_tiet_sp/').'?id='.$value['id_sanpham']; ?>"><img height="258px" width="258px" src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt=""></a>
 										<div class="product-label">
 											<span class="sale">-<?php echo $value['khuyenmai'];?>%</span>
 											<span class="new">NEW</span>
@@ -115,7 +120,10 @@
 
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
+							<span class="store-qty">Số sản phẩm tìm được là :<?php echo $i;?></span>
+							<?php //phan trang
+								
+							?>
 							<ul class="store-pagination">
 								<li class="active">1</li>
 								<li><a href="#">2</a></li>

@@ -1,3 +1,4 @@
+<?php //var_dump($dshot);?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -61,7 +62,7 @@
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt="">
+												<a href="<?php echo base_url('store/chi_tiet_sp/').'?id='.$value['id_sanpham']; ?>"><img height="258px" width="258px" src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt=""></a>
 												<div class="product-label">
 													<span class="sale">-<?php echo $value['khuyenmai'];?>%</span>
 													<span class="new">NEW</span>
@@ -131,14 +132,14 @@
 								<div id="tab2" class="tab-pane fade in active">
 									<div class="products-slick" data-nav="#slick-nav-2">
 										<?php
-											foreach ($ds as  $value) {
+											foreach ($dshot as  $value) {
 												# code...
-												if($value['seo']==1){
+												
 										?>
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
-												<img src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt="">
+												<a href="<?php echo base_url('store/chi_tiet_sp/').'?id='.$value['id_sanpham']; ?>"><img height="258px" width="258px" src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt=""></a>
 												<div class="product-label">
 													<span class="sale">-<?php echo $value['khuyenmai'];?>%</span>
 													<span class="new">NEW</span>
@@ -164,7 +165,7 @@
 											</div>
 										</div>
 										<!-- /product -->
-									<?php }} ?>
+									<?php } ?>
 
 										
 									</div>

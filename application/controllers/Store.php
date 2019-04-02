@@ -45,7 +45,16 @@
 			$data['path']=array('site/home/v_search');
 			$this->load->view('site/home/v_product',$data);
 		}
+		public function bo_loc_hang()
+		{
+			
+			$id=$this->input->get('id');
+			
+			$dssp=$this->m_san_pham_table->bo_loc_hang($id);
 
-
+			//var_dump($dssp);
+			$data['dssp']=$dssp;
+			$this->load->view('site/home/v_search',$data);
+		}
 	}
 ?>

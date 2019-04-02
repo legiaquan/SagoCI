@@ -48,7 +48,7 @@
 										<option value="0">Sago</option>
 										
 									</select>
-									<input name ="ts" class="input" placeholder="Tìm Kiếm">
+									<input name ="ts" class="input" placeholder="Tìm Kiếm" value="<?php if(isset($_GET['ts'])){echo $_GET['ts'];}?>">
 									<button  class="search-btn" name="btnSearch" value="dn">Search</button>
 								</form>
 							</div>

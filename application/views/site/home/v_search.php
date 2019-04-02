@@ -1,3 +1,10 @@
+<?php
+	$data_Search = $this->input->get(null);
+	if(isset($data_Search['ts']))
+		$ten= $data_Search['ts'];
+	else
+		$ten='';
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -70,24 +77,30 @@
 						<!-- /store top filter -->
 
 						<!-- store products -->
+						<?php
+							$i=0;
+							
+							if($dssp==0){
+								echo "Không tìm thấy từ khóa <i>'".$ten."'</i>";
+							}
+							else{
+								echo "Kết quả tìm kiếm từ khóa <i>'".$ten."'</i>";
+						?>
 						<div class="row">
 							<?php
-								$data_Search = $this->input->get(null);
-								$ten= $data_Search['ts'];
-								if($dssp==0){
-									echo "Không tìm thấy từ khóa <i>'".$ten."'</i>";
-								}
-								else{
+								
+								
+								
 								foreach ($dssp as $value) {
 										# code...
-							
+								$i++;
 												
 							?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt="">
+										<a href="<?php echo base_url('store/chi_tiet_sp/').'?id='.$value['id_sanpham']; ?>"><img height="258px" width="258px" src="<?php echo public_url()?>site/img/<?php echo $value['hinhsp'];?>" alt=""></a>
 										<div class="product-label">
 											<span class="sale">-<?php echo $value['khuyenmai'];?>%</span>
 											<span class="new">NEW</span>
@@ -126,7 +139,8 @@
 
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
+							<span class="store-qty">Số sản phẩm tìm được là: <?php echo $i;?></span>
+							<!--
 							<ul class="store-pagination">
 								<li class="active">1</li>
 								<li><a href="#">2</a></li>
@@ -134,6 +148,7 @@
 								<li><a href="#">4</a></li>
 								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
 							</ul>
+						-->
 						</div>
 						<!-- /store bottom filter -->
 					</div>
