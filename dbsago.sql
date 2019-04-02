@@ -122,7 +122,7 @@ INSERT INTO `tbhangdt` (`id_hangdt`, `tenhang`) VALUES
 (2, 'Sony'),
 (3, 'Nokia');
 
--- --------------------------------------------------------
+-- ---------------------------------------------------------
 
 --
 -- Table structure for table `tbhoadon`
