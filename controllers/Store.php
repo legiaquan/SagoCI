@@ -38,16 +38,19 @@
 			
 			//$id=$this->input->get('id');
 			if(!isset($_GET['id']))
-				$this->load->view('site/home/v_404');
+				$this->load->view('site/home/not_found');
 			else{
 				$id=$this->input->get('id');
 			
 			$dssp=$this->m_san_pham_table->chi_tiet_sp($id);
-
-			//var_dump($dssp);
-			$data['dssp']=$dssp;
-			$data['path']=array('site/home/v_search');
-			$this->load->view('site/home/v_product',$data);
+				if($dssp!=false){
+					//var_dump($dssp);
+					$data['dssp']=$dssp;
+					$data['path']=array('site/home/v_search');
+					$this->load->view('site/home/v_product',$data);
+				}
+				else
+					$this->load->view('site/home/not_found');
 			}
 		}
 		public function bo_loc_hang()
